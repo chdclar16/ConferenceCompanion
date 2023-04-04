@@ -1,14 +1,14 @@
 window.addEventListener('DOMContentLoaded',async () => {
     const url = 'http://localhost:8000/api/conferences/'
 
-function createCard(title, description, pictureUrl) {
+function createCard(title, description, pictureUrl, dateStart, dateEnd) {
     return `
         <div class="shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem">
         <img src="${pictureUrl}" class="img-fluid rounded-start" alt="...">
         <div class="card-body">
             <h5 class="card-title">${title}</h5>
             <p class="card-text">${description}</p>
-        <div class="card-footer border-success">${}
+            <div class="card-footer border-success">${dateStart.toLocaleDateString()} - ${dateEnd.toLocaleDateString()}</div>
         </div>
         </div>
     `;
@@ -31,10 +31,11 @@ function createCard(title, description, pictureUrl) {
                 const title = details.conference.name;
                 const description = details.conference.description;
                 const pictureUrl = details.conference.location.picture_url;
-                const html = createCard(title, description, pictureUrl);
+                const dateStart = new Date(details.conference.starts)
+                const dateEnd = new Date(details.conference.ends)
+                const html = createCard(title, description, pictureUrl, dateStart, dateEnd);
                 const column = document.querySelector('.card-columns')
                 column.innerHTML += html;
-                console.log(html)
             }
         }
 
