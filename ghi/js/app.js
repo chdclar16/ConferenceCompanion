@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded',async () => {
 
 function createCard(title, description, pictureUrl, dateStart, dateEnd, location) {
     return `
-        <div class="col">
+        <div class="col-4">
         <div class="class shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 30rem">
             <img src="${pictureUrl}" class="img-fluid rounded-start" alt="...">
             <div class="card-body">
