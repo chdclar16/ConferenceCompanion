@@ -29,7 +29,7 @@ function createCard(title, description, pictureUrl, dateStart, dateEnd, location
         for (let conference of data.conferences) {
             const detailUrl = `http://localhost:8000${conference.href}`;
             const detailResponse = await fetch(detailUrl);
-            if (detailResponse.ok || locationResponse.ok) {
+            if (detailResponse.ok) {
                 const details = await detailResponse.json();
                 const title = details.conference.name;
                 const description = details.conference.description;
