@@ -3,9 +3,9 @@ window.addEventListener('DOMContentLoaded',async () => {
 
 function createCard(title, description, pictureUrl, dateStart, dateEnd, location) {
     return `
-        <div class="col-4">
-        <div class="class shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 30rem">
-            <img src="${pictureUrl}" class="img-fluid rounded-start" alt="...">
+        <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card shadow p-3 mb-5 bg-body-tertiary rounded m-0">
+            <img src="${pictureUrl}" class="card-img-top img-fluid w-100 rounded-start" style="object-fit: cover;" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${title}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">${location}</h6>
